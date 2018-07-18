@@ -1,0 +1,31 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+import classNames from 'classnames';
+import './<%= props.name %>.scss';
+
+const <%= props.name %> = (props) => {
+  const <%= props.name.replace(/^([A-Z])/, function(match){return match.toLowerCase()}) %>ClassNames = classNames('<%= props.name.replace(/([A-Z])/g, '-$&').toLowerCase().slice(1) %>', {
+    [props.className]: props.className,
+  });
+
+  return (
+    <div
+      style={props.style}
+      className={<%= props.name.replace(/^([A-Z])/, function(match){return match.toLowerCase()}) %>ClassNames}
+    >
+    Build your <%= props.name %> in src/components/<%= props.name %>/<%= props.name %>.js!
+    </div>
+  );
+};
+
+<%= props.name %>.defaultProps = {
+  // className: '',
+  // style: {},
+};
+
+<%= props.name %>.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+};
+
+export default <%= props.name %>;

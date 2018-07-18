@@ -1,0 +1,17 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+// import { action } from '@storybook/addon-actions';
+import <%= props.name %> from './<%= props.name %>';
+
+const stories = storiesOf('<%= props.name %>', module);
+
+stories.add(
+  'Default',
+  withInfo(`
+    # Default Usage
+    Tell us what it does
+  `)(() => (
+    <<%= props.name %>/>
+  ))
+);
