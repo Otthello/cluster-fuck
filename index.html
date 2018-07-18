@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 boilerplate – all you really need…</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+  <button class="btn d4"><img src="./icn-d-4.png"></button>
+  <button class="btn d6"><img src="./icn-d-6.png"></button>
+  <button class="btn d8"><img src="./icn-d-8.png"></button>
+  <button class="btn d10"><img src="./icn-d-10.png"></button>
+  <button class="btn d12"><img src="./icn-d-12.png"></button>
+  <button class="btn d20"><img src="./icn-d-20.png"></button>
+  <style>
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 0;
+      padding: 0;
+    }
+    .btn {
+      background: transparent;
+      padding: 0;
+      border-width: 1px;
+      border-style: outset;
+      border-color: transparent;
+      border-image: unset;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      color: white;
+      font-size: 66px;
+      vertical-align: top;
+    }
+    .d4{
+        background: #F44336;
+    box-shadow: inset -1px -7px 8px #D32F2F;
+}
+
+
+    .d6{
+       background: #E91E63;
+    box-shadow: inset -1px -7px 8px #C2185B ;
+}
+
+
+    .d8{
+        background: #FF9800;
+    box-shadow: inset -1px -7px 8px #F57C00;
+}
+
+
+    .d10{
+        background: #4CAF50;
+    box-shadow: inset -1px -7px 8px #388E3C;
+}
+
+
+    .d12{
+        background: #673AB7;
+    box-shadow: inset -1px -7px 8px #512DA8;
+}
+
+
+    .d20{
+        background: #00BCD4;
+    box-shadow: inset -1px -7px 8px #0097A7;
+}
+
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+      }
+    function handleClick(ev){
+      ev.preventDefault();
+      const die = ev.target.attributes.src.nodeValue
+        .replace('.png', '')
+        .replace('./icn-d-', '');
+      ev.target.parentNode.innerText = getRandomInt(1, new Number(die));
+      ev.target.classList = ['hidden']
+    }
+    var buttons = document.getElementsByClassName("btn");
+    for(var i = 0; i < buttons.length; i++){
+      buttons[i].addEventListener('click', handleClick)  
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+/*
+d4
+base: #F44336
+shadow: #D32F2F
+
+d6
+base: #E91E63 
+shadow: #C2185B
+
+d8
+base: #FF9800 
+shadow: #F57C00
+
+d10
+base: #4CAF50 
+shadow: #388E3C
+
+d12
+base: #673AB7 
+shadow: #512DA8
+
+d20
+base: #00BCD4 
+shadow: #0097A7
+*/
+
+@mixin rolled-styles($base-color, $shadow-color) {
+    &--rolled {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background: $base-color;
+      line-height: 1.5;
+      box-shadow: inset -1px -7px 8px $shadow-color;
+    }
+}
